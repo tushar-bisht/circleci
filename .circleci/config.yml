@@ -26,6 +26,7 @@ jobs:
            chmod 755 .circleci/deploy_prod.sh
            ssh-keyscan 65.1.93.116 >> ~/.ssh/known_hosts
            git pull origin prod
+           ./.circleci/deploy_prod.sh
 
 workflows:
   workflow:
