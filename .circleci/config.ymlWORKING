@@ -13,6 +13,10 @@ jobs:
          command: |
            chmod 755 .circleci/deploy.sh
            ssh-keyscan 65.1.93.116 >> ~/.ssh/known_hosts
+      - run: 
+         name: develop
+         command: |
+           git pull origin develop
       - run:
          name: Deploy
          command: ./.circleci/deploy.sh
@@ -22,7 +26,7 @@ jobs:
            chmod 755 .circleci/deploy_prod.sh
            ssh-keyscan 65.1.93.116 >> ~/.ssh/known_hosts
            git pull origin prod
-           ./.circleci/deploy_prod.sh
+           ./.circleci/deploy.sh
 
 workflows:
   workflow:
