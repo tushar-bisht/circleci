@@ -7,6 +7,7 @@ jobs:
       - add_ssh_keys:
          fingerprints:
            - "1e:d9:f3:a7:51:35:47:e7:8f:e1:20:eb:a0:9b:cd:6c"
+           - "81:f8:fa:dc:e4:67:a0:91:a7:20:30:1e:d4:28:29:6e"
       - checkout
       - run:
          name: Setup
@@ -20,7 +21,7 @@ jobs:
          name: prod
          command: |
            chmod 755 .circleci/deploy_prod.sh
-           ssh-keyscan 65.1.93.116 >> ~/.ssh/known_hosts
+           ssh-keyscan 15.206.89.136 >> ~/.ssh/known_hosts
            ./.circleci/deploy_prod.sh
 
 workflows:
